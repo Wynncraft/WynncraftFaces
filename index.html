@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wynncraft Community</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container"  id="online">
+    <h1 class="text-center">Online Now</h1>
+</div>
+<!-- end container -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://oss.maxcdn.com/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Json Fetch
+        $.getJSON("http://localhost/wynn/api/public_api.php?type=status&json", function (data) {
+            $.each(data, function (key, obj) {
+                var server = key;
+                $.each(obj, function (key, obj) {
+                    var player = obj;
+
+                    // Check if player defined
+                    if (player.length != 0) {
+                        $('<img/>', {
+                            id: player,
+                            src: 'http://wynncraft.com/api/avatar/' + player + '/64',
+                            style: "display:none",
+                            "data-toggle": 'tooltip',
+                            "data-original-title": player + ' online on server ' + server,
+                            "data-placement": "top"
+                        }).appendTo('#online').fadeIn();
+                    }
+                });
+            });
+
+            // Set tooltips
+            $('[data-toggle=tooltip]').tooltip();
+        });
+
+    });
+</script>
+</body>
+</html>
