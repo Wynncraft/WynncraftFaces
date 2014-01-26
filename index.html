@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +27,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         // Json Fetch
-        $.getJSON("http://localhost/wynn/api/public_api.php?type=status&json", function (data) {
+        $.getJSON("http://wynncraft.com/api/public_api.php?type=status&json", function (data) {
             $.each(data, function (key, obj) {
                 var server = key;
                 $.each(obj, function (key, obj) {
