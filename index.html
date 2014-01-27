@@ -23,7 +23,6 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="http://oss.maxcdn.com/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         // Json Fetch
@@ -34,7 +33,7 @@
                     var player = obj;
 
                     // Check if player defined
-                    if (player.length != 0) {
+                    if (player.length !== 0) {
                         $('<img/>', {
                             id: player,
                             src: 'http://wynncraft.com/api/avatar/' + player + '/64',
