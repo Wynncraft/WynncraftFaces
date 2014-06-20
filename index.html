@@ -33,7 +33,7 @@
                     var player = obj;
 
                     // Check if player defined
-                    if (player.length !== 0) {
+                    if (player.length !== 0 && server !== "request") {
                         $('<img/>', {
                             id: player,
                             src: 'http://api.wynncraft.com/avatar/' + player + '/64',
