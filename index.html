@@ -14,7 +14,7 @@
     <![endif]-->
 </head>
 <body>
-<div class="container"  id="online">
+<div class="container col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-lg-10 col-lg-offset-1"  id="online">
     <h1 class="text-center">Online Now</h1>
 </div>
 <!-- end container -->
@@ -33,15 +33,14 @@
                     var player = obj;
 
                     // Check if player defined
-                    if (player.length !== 0) {
+                    if (player.length !== 0 && server !== "request") {
                         $('<img/>', {
                             id: player,
-                            src: 'http://api.wynncraft.com/avatar/' + player + '/64',
-                            style: "display:none",
+                            src: 'http://api.wynncraft.com/avatar/' + player + '/64.png',
                             "data-toggle": 'tooltip',
                             "data-original-title": player + ' online on server ' + server,
                             "data-placement": "top"
-                        }).appendTo('#online').fadeIn();
+                        }).appendTo('#online');
                     }
                 });
             });
