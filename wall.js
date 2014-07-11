@@ -1,3 +1,7 @@
+/**
+ * @copyright  Wynncraft 2013, 2014
+ * @author     Chris Ireland <ireland63@gmail.com>
+ */
 $(document).ready(function() {
     // Json Fetch
     $.getJSON(
